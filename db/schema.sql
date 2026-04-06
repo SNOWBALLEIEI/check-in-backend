@@ -56,7 +56,8 @@ INSERT IGNORE INTO houses (id, name) VALUES
   (2, 'HOUSE 2'),
   (3, 'HOUSE 3'),
   (4, 'HOUSE 4'),
-  (5, 'HOUSE 5');
+  (5, 'HOUSE 5'),
+  (6, 'สำรอง');
 
 INSERT IGNORE INTO members (house_id, name, order_index) VALUES
   (1, 'Kay Tumgundailong',   0),
@@ -64,6 +65,7 @@ INSERT IGNORE INTO members (house_id, name, order_index) VALUES
   (1, 'Nin Star',            2),
   (1, 'Damon Mega',          3),
   (1, 'Thale Agi',           4),
+  (1, 'Red Onefourk',          5),
 
   (2, 'Sugus Klayphetw',     0),
   (2, 'Daisy Onefourk',      1),
@@ -77,8 +79,8 @@ INSERT IGNORE INTO members (house_id, name, order_index) VALUES
   (3, 'Bxbe Roulette',       1),
   (3, 'Woody Watdaimod',     2),
   (3, 'Jasper Runtukverb',   3),
-  (3, 'Boss Onefourk',       4),
-  (3, 'Justx Raengtamlom',   5),
+  (3, 'Mars Thebuzz',       4),
+  (3, 'Mara Onefourk',       5),
 
   (4, 'Ryu Nomoney',         0),
   (4, 'Somruay Onefourk',    1),
@@ -92,4 +94,8 @@ INSERT IGNORE INTO members (house_id, name, order_index) VALUES
   (5, 'Pong Darksecret',     2),
   (5, 'Nongstefan Onefourk', 3),
   (5, 'Champ Kinsaep',       4),
-  (5, 'Jin Cuteless',        5);
+
+  (6, 'Jin',             0),
+  (6, 'JustX',           1),
+  (6, 'Boss Onefourk',   2),
+  (6, 'Moon',            3);
