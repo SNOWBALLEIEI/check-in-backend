@@ -4,6 +4,7 @@ const cors       = require('cors')
 
 const housesRouter     = require('./routes/houses')
 const attendanceRouter = require('./routes/attendance')
+const practiceRouter   = require('./routes/practice')
 
 const app = express()
 
@@ -17,6 +18,7 @@ app.use(express.json())
 // ── Routes ────────────────────────────────────────────────────
 app.use('/api/houses',     housesRouter)
 app.use('/api/attendance', attendanceRouter)
+app.use('/api/practice',   practiceRouter)
 
 app.get('/api/health', (_req, res) => res.json({ status: 'ok' }))
 

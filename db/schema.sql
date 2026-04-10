@@ -50,6 +50,30 @@ CREATE TABLE IF NOT EXISTS attendance_details (
   FOREIGN KEY (record_id) REFERENCES attendance_records(id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+-- ─── PRACTICE RECORDS ────────────────────────────────────────
+CREATE TABLE IF NOT EXISTS practice_records (
+  id            VARCHAR(60)  NOT NULL,
+  house_id      INT          NOT NULL,
+  house_name    VARCHAR(50)  NOT NULL,
+  practice_day  VARCHAR(30)  NOT NULL,
+  present_count INT          NOT NULL DEFAULT 0,
+  leave_count   INT          NOT NULL DEFAULT 0,
+  absent_count  INT          NOT NULL DEFAULT 0,
+  created_at    DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id),
+  FOREIGN KEY (house_id) REFERENCES houses(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ─── PRACTICE DETAILS ────────────────────────────────────────
+CREATE TABLE IF NOT EXISTS practice_details (
+  id          INT          NOT NULL AUTO_INCREMENT,
+  record_id   VARCHAR(60)  NOT NULL,
+  member_name VARCHAR(100) NOT NULL,
+  status      ENUM('present','leave','absent','leave_proof') DEFAULT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (record_id) REFERENCES practice_records(id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 -- ─── SEED DATA ────────────────────────────────────────────────
 INSERT IGNORE INTO houses (id, name) VALUES
   (1, 'HOUSE 1'),
